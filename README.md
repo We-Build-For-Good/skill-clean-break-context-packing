@@ -26,19 +26,19 @@ It prevents the chaos of mid-session disconnects, token limits, and abrupt sessi
 
 ### For Claude Code
 ```bash
-git clone https://github.com/webuildforgood/skill-clean-break-context-packing.git ~/.claude/skills/clean-break-context-packing
+git clone https://github.com/We-Build-For-Good/skill-clean-break-context-packing.git ~/.claude/skills/clean-break-context-packing
 ```
 
 ### For Cursor
 ```bash
 mkdir -p .cursor/skills
-git clone https://github.com/webuildforgood/skill-clean-break-context-packing.git .cursor/skills/clean-break-context-packing
+git clone https://github.com/We-Build-For-Good/skill-clean-break-context-packing.git .cursor/skills/clean-break-context-packing
 ```
 
 ### For Antigravity / Open Agent Skills
 ```bash
 mkdir -p .agents/skills
-git clone https://github.com/webuildforgood/skill-clean-break-context-packing.git .agents/skills/clean-break-context-packing
+git clone https://github.com/We-Build-For-Good/skill-clean-break-context-packing.git .agents/skills/clean-break-context-packing
 ```
 
 ---
