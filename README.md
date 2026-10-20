@@ -16,8 +16,8 @@ It prevents the chaos of mid-session disconnects, token limits, and abrupt sessi
 ## The 4 Steps
 
 1. **Freeze the Line**: Stop starting new work; leave files syntactically valid.
-2. **Commit the Checkpoint**: Commit working code with a descriptive WIP message.
-3. **Verify the Tree**: Confirm `git status` is clean.
+2. **Commit the Checkpoint**: Commit your own changes, by path, with a descriptive WIP message.
+3. **Verify the Tree**: Confirm `git status` shows none of your work left uncommitted.
 4. **Write the 3-Line Continuation Pointer**: State the branch/commit, verified tests, and the single next file/line to edit.
 
 ---

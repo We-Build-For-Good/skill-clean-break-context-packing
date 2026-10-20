@@ -1,10 +1,10 @@
 ---
 name: clean-break-context-packing
-description: A 60-second end-of-shift protocol that cleanly freezes working state, commits checkpoints, stashes uncommitted experiments, and writes a crisp continuation line. Ensures any incoming AI model or human operator can orient in under 30 seconds with zero context degradation.
+description: A 60-second end-of-shift protocol that cleanly freezes working state, commits checkpoints, stashes uncommitted experiments, and writes a crisp continuation line. Aims for any incoming AI model or human operator to orient in about 30 seconds.
 license: MIT
 metadata:
   author: We Build for Good
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Clean Break & Context Packing Protocol
@@ -41,15 +41,15 @@ When reaching the end of a shift, an approaching token threshold, or when asked 
 * Wrap the current file edit to a syntactically valid state.
 
 ### Step 2: Commit the Checkpoint
-* Stage and commit all working changes to the active branch.
+* Stage and commit the changes you made, by path (`git add <files>`). Avoid `git add -A` or `git add .`: in a shared checkout they sweep up other sessions' work and generated files.
 * Use a clear, descriptive commit message:
   * If complete: `feat(scope): implement target behavior`
-  * If mid-flight: `wip(scope): checkpoint before session handoff - tests passing`
-* Never leave uncommitted files dirty in the working tree unless explicitly stashed with a named label (`git stash push -m "wip-experiment"`).
+  * If mid-flight: `wip(scope): checkpoint before session handoff` (add "tests passing" only if you just ran them and they passed)
+* Do not leave your own uncommitted files behind unless stashed with a named label (`git stash push -m "wip-experiment" -- <files>`). Never commit, stash or revert changes you did not make: list them in the continuation pointer instead.
 
 ### Step 3: Verify the Tree
 * Run `git status --short`.
-* Confirm the working tree is clean.
+* Confirm none of your changes are left uncommitted. If other people's changes are present, leave them alone and note them.
 
 ### Step 4: Write the 3-Line Continuation Pointer
 * Append or update the project's continuation file (e.g. `CONTINUE.md` or session handoff log) with exactly three lines:
